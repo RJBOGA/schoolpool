@@ -19,7 +19,8 @@ public class SecurityConfig  {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/api/users/register").permitAll()  // Allow access to the registration endpoint
+                        .requestMatchers("/api/users/**").permitAll()  // Allow access to the registration endpoint
+                        .requestMatchers("/api/rides/**").permitAll()
                         .anyRequest().authenticated()  // Require authentication for all other endpoints
                 )
                 .csrf(csrf -> csrf.disable()); // Disable CSRF for simplicity (not recommended for production)
