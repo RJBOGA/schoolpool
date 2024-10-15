@@ -1,0 +1,17 @@
+<header>
+    <nav>
+        <ul>
+            <li><a routerLink="/">Home</a></li>
+            <li><a routerLink="/login">Login</a></li>
+            <li><a routerLink="/register" >Register</a></li>
+            <li><a *ngIf="!isLoggedIn" routerLink="/post-ride">Post Ride</a></li>
+            <li><a *ngIf="!isLoggedIn" routerLink="/request-ride">Request Ride</a></li>
+        </ul>
+    </nav>
+</header>
+<main class="container">
+    <router-outlet></router-outlet>
+</main>
+<!-- <footer>
+    <p>&copy; 2023 SchoolPool. All rights reserved.</p>
+</footer> -->

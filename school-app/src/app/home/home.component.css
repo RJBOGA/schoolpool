@@ -1,0 +1,16 @@
+.container {
+    text-align: center;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.btn {
+    margin: 10px;
+    /* Adjust the margin value to control the spacing */
+    text-decoration: none;
+}
+
+h1, p {
+    margin-bottom: 50px;
+    /* Adjust the margin value as needed */
+}

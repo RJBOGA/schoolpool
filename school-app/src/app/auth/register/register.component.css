@@ -1,0 +1,51 @@
+/* General styles for form elements */
+form {
+    display: flex; /* Arrange fields horizontally */
+    flex-direction: column; /* Stack fields vertically */
+    width: 100%; /* Form fills container width */
+    margin: 0 auto; /* Center the form horizontally */
+    padding: 20px; /* Add some padding for visual spacing */
+    border: 1px solid #ddd; /* Light border for form */
+    border-radius: 5px; /* Rounded corners for a softer look */
+  }
+  
+  label {
+    display: inline-block; /* Labels on the same line as inputs */
+    width: 120px; /* Consistent label width for alignment */
+    margin-bottom: 5px; /* Add spacing between labels and inputs */
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    width: 100%; /* Inputs fill remaining space */
+    padding: 10px; /* Add padding for readability */
+    border: 1px solid #ccc; /* Light border for inputs */
+    border-radius: 3px; /* Rounded corners for inputs */
+  }
+  
+  input[type="checkbox"] {
+    margin-right: 5px; /* Spacing between checkbox and label */
+  }
+  
+  button[type="submit"] {
+    background-color: #4CAF50; /* Green button color */
+    color: white; /* White text color */
+    padding: 10px 20px; /* Add padding for button size */
+    border: none; /* Remove default button border */
+    border-radius: 5px; /* Rounded corners for button */
+    cursor: pointer; /* Make it clear the button is clickable */
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #45A049; /* Darker green on hover */
+  }
+  
+  /* Specific styles for conditional fields */
+  .rider-profile {
+    display: none; /* Initially hide rider profile fields */
+  }
+  
+  input[type="checkbox"]:checked ~ .rider-profile {
+    display: block; /* Show rider profile fields when checkbox is checked */
+  }

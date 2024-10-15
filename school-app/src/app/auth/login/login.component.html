@@ -1,0 +1,32 @@
+<mat-card class="login-card">
+    <mat-card-header>
+      <mat-card-title>Login</mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="center">
+      <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+        <div>
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput type="email" id="emailid" name="emailid" [(ngModel)]="emailid" required>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Password</mat-label>
+            <input matInput type="password" id="password" name="password" [(ngModel)]="password" required>
+            <button mat-icon-button type="button" matSuffix (click)="showPassword = !showPassword">
+              <mat-icon>{{ showPassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+            </button>
+          </mat-form-field>
+        </div>
+        <div class="center">
+          <button mat-raised-button color="primary" type="submit" [disabled]="!loginForm.form.valid">Login</button>
+          <a mat-button href="/forgot-password">Forgot password?</a>
+        </div>
+      </form>
+      <div class="center">
+        <span>Don't have an account?</span>
+        <a mat-button href="/register">Register</a>
+      </div>
+    </mat-card-content>
+  </mat-card>

@@ -1,0 +1,43 @@
+.login-card {
+    max-width: 500px; /* Decreased max-width */
+    margin: 25px auto; /* Adjusted margin for smaller card */
+    padding: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+mat-card-title {
+    text-align: center;
+    font-size: 20px; /* Slightly reduced font size */
+    font-weight: bold;
+}
+
+.full-width {
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+mat-form-field {
+    width: 50%; /* Adjust the width to 75% */
+    margin-bottom: 5px;
+    min-height: 5x;
+}
+
+/* Adjusting padding for mat-input */
+mat-input-element {
+    padding: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+}
+
+/* Decrease the size of box fields */
+mat-form-field {
+    width: 75%; /* Adjust the width as needed */
+}
+
+mat-button{
+    text-align: center;
+}
