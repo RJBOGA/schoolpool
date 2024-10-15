@@ -18,14 +18,15 @@ public class CreateService {
     @Autowired
     private BCryptPasswordEncoder passwordEncoder;  // Autowire the BCryptPasswordEncoder
 
-    // Method to register a new user
     public Create registerUser(Create user) {
         // Hash the password before saving
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         return createRepository.save(user);
     }
 
+    // Updated to return Optional<Create>
     public Optional<Create> findByEmailid(String emailid) {
         return createRepository.findByEmailid(emailid);
     }
+
 }

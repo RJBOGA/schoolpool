@@ -9,6 +9,7 @@ import { User } from '../models/user.model';
 })
 export class AuthService {
   private apiUrl = 'http://localhost:8080/api/users';
+  private authUrl = 'http://localhost:8080/api/auth/login'
   private currentUserSubject: BehaviorSubject<User | null>;
   public currentUser: Observable<User | null>;
 
@@ -28,13 +29,14 @@ export class AuthService {
   }
 
   login(email: string, password: string): Observable<any> {
-    // TODO: Implement login API call when available
-    return new Observable(observer => {
-      const mockUser: User = { id: '1', name: 'John Doe', email, role: 'rider' };
-      this.currentUserSubject.next(mockUser);
-      observer.next({ success: true, data: mockUser });
-      observer.complete();
-    });
+    const loginData = { mailID: email, password: password };
+    return this.http.post(this.authUrl, loginData).pipe(
+      tap((response: any) => {
+        if (response.success) {
+          this.currentUserSubject.next(response.data);
+        }
+      })
+    );
   }
 
   logout(): void {

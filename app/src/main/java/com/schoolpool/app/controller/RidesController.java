@@ -11,6 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/rides")  // Base URL for ride-related requests
+@CrossOrigin(origins = "http://localhost:4200")
 public class RidesController {
 
     @Autowired
